@@ -1,0 +1,48 @@
+
+.container {
+  margin-top:20px;
+  height: 100%;
+
+  width: 100%;
+}
+
+.row1 {
+width: 100%;
+margin-top:10px;
+height: 1100px;
+}
+
+
+#force {
+  height:1100px;
+  width:1300px;
+}
+
+#cloud1 {
+  height:600px;
+  width:900px;
+  margin-bottom:5px;
+  margin-left:5px;
+}
+
+#cloud2 {
+  height:600px;
+  width:900px;
+  margin-bottom:5px;
+  margin-left:5px;
+}
+
+#cloud3 {
+  height:600px;
+  width:900px;
+  margin-bottom:5px;
+  margin-left:5px;
+}
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
