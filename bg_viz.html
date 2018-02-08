@@ -72,7 +72,7 @@
 
 
 
-    d3.csv("https://github.com/Markovicc/Social-Media-in-Politics/blob/gh-pages/data/forviz.csv", function (error, data) {
+    d3.csv("./data/forviz.csv", function (error, data) {
         if (error) throw error;
         var parseDate = d3.time.format("%Y-%m-%d %H:%M:%S").parse;
 
