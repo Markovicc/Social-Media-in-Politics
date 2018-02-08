@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kampanja za beogradske izbore na Tviteru</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.9/dc.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.9/dc.min.css"/>
+
+    <style>
+
+    #share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+    }
+
+    #foot{
+        width: 900px;
+        height: 30px;
+        padding: 10px;
+        margin-top: 5px;
+    }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+<div id="share-buttons">
+    <a href="https://markovicc.github.io/Social-Media-in-Politics/bg_viz.html" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
+    <a href="https://markovicc.github.io/Social-Media-in-Politics/bg_viz.html" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+    </a>
+    <a href="https://markovicc.github.io/Social-Media-in-Politics/bg_viz.html" target="_blank">
+       <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+   </a>
+</div>
+<h1 style="text-align:center">Kampanja za beogradske izbore na Tviteru</h2>
+<a href="javascript:dc.filterAll(); dc.renderAll();">Resetuj grafike</a>
+
+<div id="period-line"><h4 style="text-align:center">Tvitovi po danima</h4></div>
+<div id="kandidati-row"><h4>Tvitovi u kojima se pominje kandidat</h4> </div>
+<div id="pristalice-pie"><h4>Pristalice</h4></div>
+<div id="sentiment-pie"><h4>Sadržaj tvitova</h4></div>
+<div id="uticaj-row"><h4>Nalozi sa najviše retvitova</h4> </div>
+<div id="most-row"><h4>Nalozi sa najviše tvitova</h4> </div>
+<div id="dani-bar"><h4>Tvitovi po satima</h4></div>
+<div id="aparat-pie"><h4>Uređaji sa kojih se tvituje</h4> </div>
+<div  id = "foot" style="text-align:center" ><p><a href="https://www.linkedin.com/in/miodrag-markovi%C4%87-3a811914b/">Autor: Miodrag Marković</a></p></div>
+
+
+<script type="text/javascript">
+    var perChart = dc.lineChart("#period-line");
+    var kandChart = dc.rowChart("#kandidati-row");
+    var pristPie = dc.pieChart("#pristalice-pie");
+    var sentPie = dc.pieChart("#sentiment-pie");
+    var uticRow = dc.rowChart("#uticaj-row");
+    var mostRow = dc.rowChart("#most-row");
+    var daniBar = dc.barChart("#dani-bar");
+    var aparPie = dc.pieChart("#aparat-pie");
+
+
+
+    d3.csv("data/forviz.csv", function (error, data) {
+        if (error) throw error;
+        var parseDate = d3.time.format("%Y-%m-%d %H:%M:%S").parse;
+
+        data.forEach(function (e) {
+            e.vreme = parseDate(e.vreme);
+            e.sat = d3.time.hour.round(e.vreme);
+        });
+
+        var ndx = crossfilter(data);
+        var all = ndx.groupAll();
+
+        var Kandidati = ndx.dimension(function (d) {
+            return d.kandidat;
+        });
+        var Vreme = ndx.dimension(function (d) {
+            return d.vreme.getHours();
+        });
+
+        var Hours = ndx.dimension(function (d) {
+            return d.sat;
+        });
+        var Sent = ndx.dimension(function (d) {
+            return d.value;
+        });
+
+        var Prist = ndx.dimension(function (d) {
+            return d.tag;
+        });
+        var Uticaj = ndx.dimension(function (d) {
+            return d.source;
+        });
+        var Most = ndx.dimension(function (d) {
+            return d.user_screenname;
+        });
+
+        var Apar = ndx.dimension(function (d) {
+            return d.aparat;
+        });
+
+
+
+        var KaGroup = Kandidati.group();
+        var HrGroup = Hours.group();
+        var SeGroup = Sent.group();
+        var PrGroup = Prist.group();
+        var UtGroup = Uticaj.group();
+        var MostGroup = Most.group();
+        var ApGroup = Apar.group();
+        var Dani = Vreme.group().reduceCount();
+
+        console.log(Dani);
+
+
+
+
+
+
+        var minDate = Hours.bottom(1)[0].sat;
+        var maxDate = Hours.top(1)[0].sat;
+
+
+
+        perChart
+                .width(1000)
+                .height(350)
+                .dimension(Hours)
+                .group(HrGroup)
+                .renderArea(true)
+                .x(d3.time.scale().domain([minDate,maxDate]))
+                .elasticX(true)
+                .elasticY(true);
+
+        pristPie
+                .dimension(Prist)
+                .group(PrGroup);
+
+        kandChart
+                .width(700)
+                .dimension(Kandidati)
+                .group(KaGroup);
+
+        sentPie
+                .width(400)
+                .height(330)
+                .dimension(Sent)
+                .group(SeGroup)
+                .innerRadius(70);
+
+
+
+        uticRow
+                .height(500)
+                .dimension(Uticaj)
+                .group(UtGroup)
+                .data(function (group) { return group.top(20);});
+
+        mostRow
+                .height(500)
+                .dimension(Most)
+                .group(MostGroup)
+                .data(function (group) { return group.top(20);});
+
+        aparPie
+                .width(400)
+                .height(330)
+                .dimension(Apar)
+                .group(ApGroup)
+                .innerRadius(50);
+
+        daniBar
+                .width(470)
+                .height(350)
+                .dimension(Hours)
+                .group(Dani)
+                .brushOn(false)
+                .x(d3.scale.linear().domain([0,24]))
+                .barPadding(0.1)
+                .outerPadding(0.05)
+                .elasticX(true)
+                .elasticY(true);
+
+        dc.renderAll();
+    });
+
+    </script>
+
+</div>
+
+</body>
+
+</html>
