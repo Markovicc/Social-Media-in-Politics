@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="css/vot.css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+
+
+
+    <title>Document</title>
+</head>
+
+    <section class="title">
+        <div class="container">
+            <div class="row">
+                <div class="twelwe columns" id="bird">
+                    <img src="/images/bird.png" height="110" width="110">
+                    <h1>#bgizbori</h1>
+                    <h3>Rejting izbornih lista i kandidata na Tviteru</h3>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <body>
+
+    <div class="section chart">
+        <div class="container">
+            <div class="row">
+
+                <div class="twelwe columns">
+
+                    <canvas id="votChart" height="270"></canvas>
+
+
+                </div>
+
+
+
+        </div>
+    </div>
+
+
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+
+                <div class="one-third column value">
+                    <h3 class="value-multiplier">18.285</h3>
+                    <h4 class="value-heading">tvitova</h4>
+                    <p class="value-description"> u kojima se koriste slogani i haštagovi lista i
+                        kandidata na beogradskim izborima iskorišćeno je za početni uzorak. Obuhvaćen
+                        je period od 2. do 12. februara 2018.
+                    </p>
+                </div>
+
+                <div class="one-third column value">
+                    <h3 class="value-multiplier">5.635</h3>
+                    <h4 class="value-heading">tvitova</h4>
+                    <p class="value-description">je u finalnom uzorku dobijenom nakon što su iz
+                        početnog uklonjeni tvitovi sa više od 200 retvitova
+                        i nalozi sa manje od 500 i više od 30.000 pratilaca, kako bi uzorak bio relevantniji.
+                    </p>
+                </div>
+
+                <div class="one-third column value">
+                    <h3 class="value-multiplier">907</h3>
+                    <h4 class="value-heading">naloga</h4>
+                    <p class="value-description">na Tviteru je u finalnom uzorku. Konačan rezultat
+                        je dobijen tako što su nalozi razvrstani na osnovu sadržaja tvitova. Oni kojima
+                        nijedan haštag ne dominira svrstani su u neopredeljene.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+                <div class="nine columns">
+                    <canvas id="reachChart" height="700" width="700"></canvas>
+
+                </div>
+                <div class="three columns">
+                    <h3 class="value-multiplier">Domet</h3>
+                    <h4 class="value-heading">tvitova</h4>
+                    <p class="value-description"> prikazan na grafici levo (na mobilnim telefonima - gore)
+                        izračunat je tako što je sabran broj pratilaca za svaku grupu pristalica.
+                        Prikazani brojevi pokazuju domet tvitova u prvom stepenu (u hiljadama).
+                        Za proračun je korišćen filtrirani uzorak od 5.635 tvitova.
+                    </p>
+                    <h3 class="value-multiplier">Frekvencija</h3>
+                    <h4 class="value-heading">tvitova</h4>
+                    <p class="value-description">prikazana na donjoj grafici pokazuje učestalost
+                        tvitovanja po grupama simpatizera na dnevnom nivou. Za analizu je korišćen
+                        filtrirani uzorak od 5.635 tvitova u periodu od 2. do 12. februara 2018.
+                        Podaci na grafici mogu se filtrirati klikom na oznake u legendi.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <canvas id="distChart" height="400"></canvas>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+                <div class="offset-by-two eight columns">
+                    <p><a href="https://markovicc.github.io/Social-Media-in-Politics/bg_viz.html">Analizu kampanje iz još jednog ugla možete podledati <strong>OVDE</strong></a></p>
+                    <div id="share-buttons">
+                        <a href="http://www.facebook.com/sharer.php?u=https://markovicc.github.io/Social-Media-in-Politics/bg_voting.html" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                        </a>
+                        <a href="https://twitter.com/share?url=https://markovicc.github.io/Social-Media-in-Politics/bg_voting.html" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                        </a>
+                        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://markovicc.github.io/Social-Media-in-Politics/bg_voting.html" target="_blank">
+                       <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                       </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+                <div class="offset-by-two eight columns">
+                    <p><a href="https://www.linkedin.com/in/miodrag-markovi%C4%87-3a811914b/">Miodrag Marković</a>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+    var voteCanvas = document.getElementById('votChart');
+    var voteChart = new Chart(voteCanvas,{
+        type: 'bar',
+        responsive: true,
+
+        data: {
+            labels:['Beli',
+                     'D. Đilas',
+                     'DJB-Dveri',
+                     'DS',
+                     'LDP',
+                     'NdmBgd',
+                     'A. Šapić',
+                     'SNS',
+                     'SPS',
+                     'SRS',
+                     'Neopredeljeni'],
+        datasets: [{
+            label:'Vrednost u procenatima',
+            data:[5.62,
+                 5.95,
+                 4.41,
+                 13.34,
+                 2.54,
+                 10.58,
+                 10.47,
+                 36.60,
+                 1.21,
+                 0.55,
+                 8.71],
+            backgroundColor:[
+                'rgba(124, 99, 132, 0.9)',
+                'rgba(54, 162, 235, 0.9)',
+                'rgba(255, 206, 86, 0.9)',
+                'rgba(75, 192, 192, 0.9)',
+                'rgba(153, 102, 255, 0.9)',
+                'rgba(115, 159, 64, 0.9)',
+                'rgba(52, 86, 111, 0.9)',
+                'rgba(13, 81, 137, 0.9)',
+                'rgba(290, 68, 115, 0.9)',
+                'rgba(140, 23, 58, 0.9)',
+                'rgba(217, 13, 30, 0.9)'
+                ]
+
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+    scales: {
+        xAxes: [{
+            barPercentage: 1,
+            categorySpacing: 0,
+            barThickness: 0.9,
+            gridLines: {
+                color: "rgba(0, 0, 0, 0)"
+            }
+        }],
+        yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+
+            }]
+    }
+            }
+
+    });
+    </script>
+    <script type="text/javascript">
+    var reachCanvas = document.getElementById('reachChart');
+    var reachChart = new Chart(reachCanvas,{
+        type: 'polarArea',
+        responsive: true,
+
+        data: {
+            labels:['Beli',
+                     'D. Đilas',
+                     'DJB-Dveri',
+                     'DS',
+                     'LDP',
+                     'NdmBgd',
+                     'A. Šapić',
+                     'SNS',
+                     'SPS',
+                     'SRS',
+                     'Neopredeljeni'
+                     ],
+        datasets: [{
+            label:'Domet tvitova',
+
+            data:[186.484,
+                 163.171,
+                 144.868,
+                 439.918,
+                 98.246,
+                 259.717,
+                 330.652,
+                 683.970,
+                 42.016,
+                 6.548,
+                 231.822],
+            backgroundColor:[
+                'rgba(124, 99, 132, 0.9)',
+                'rgba(54, 162, 235, 0.9)',
+                'rgba(255, 206, 86, 0.9)',
+                'rgba(75, 192, 192, 0.9)',
+                'rgba(153, 102, 255, 0.9)',
+                'rgba(115, 159, 64, 0.9)',
+                'rgba(52, 86, 111, 0.9)',
+                'rgba(13, 81, 137, 0.9)',
+                'rgba(290, 68, 115, 0.9)',
+                'rgba(140, 23, 58, 0.9)',
+                'rgba(217, 13, 30, 0.9)'
+                ]
+
+        }]
+    }
+
+
+    });
+
+    </script>
+    <script type="text/javascript">
+    var distCanvas = document.getElementById('distChart');
+    var distChart = new Chart(distCanvas,{
+        type: 'line',
+        responsive: true,
+
+        data: {
+            labels:['2. februar',
+                    '3. februar',
+                    '4. februar',
+                    '5. februar',
+                    '6. februar',
+                    '7. februar',
+                    '8. februar',
+                    '9. februar',
+                    '10. februar',
+                    '11. februar',
+                    '12. februar'],
+        datasets: [{
+            label:'Beli',
+            data:[9, 40, 20, 68, 42, 39, 54, 80, 89, 144, 33],
+            borderColor: 'rgba(124, 99, 132, 0.9)',
+            fill: false
+        },
+        {
+            label:'D. Đilas',
+            data:[5, 3, 23, 13, 27, 69, 7, 5, 19, 24, 1],
+            borderColor: 'rgba(54, 162, 235, 0.9)',
+            fill: false
+            },
+        {
+            label:'DJB-Dveri',
+            data:[2, 2, 10, 2, 82, 11, 9, 19, 25, 22, 1],
+            borderColor: "rgba(255, 206, 86, 0.9)",
+            fill: false
+            },
+        {
+            label:'DS',
+            data:[83, 34, 89, 51, 33, 63, 52, 95, 50, 219, 46],
+            borderColor: 'rgba(75, 192, 192, 0.9)',
+            fill: false
+            },
+        {
+            label:'LDP',
+            data:[8, 14, 24, 8, 15, 16, 1, 6, 12, 14],
+            borderColor: 'rgba(153, 102, 255, 0.9)',
+            fill: false
+            },
+        {
+            label:'NdmBgd',
+            data:[1, 1, 67, 16, 12, 21, 10, 25, 44, 11, 12],
+            borderColor: 'rgba(115, 159, 64, 0.9)',
+            fill: false
+            },
+        {
+            label:'A. Šapić',
+            data:[2, 17, 34, 23, 17, 3, 8, 8, 5, 18, 8],
+            borderColor: 'rgba(52, 86, 111, 0.9)',
+            fill: false
+            },
+        {
+            label:'SNS',
+            data:[31, 181, 1254, 233, 120, 100, 144, 134, 108, 658, 24],
+            borderColor: 'rgba(13, 81, 137, 0.9)',
+            fill: false
+            },
+        {
+            label:'SPS',
+            data:[0,3, 1, 0, 0, 0, 5, 4, 3, 22, 0],
+            borderColor: 'rgba(290, 68, 115, 0.9)',
+            fill: false
+            },
+            {
+            label:'SRS',
+            data:[0, 0, 1, 0, 0, 0, 0, 0, 5, 0, 0],
+            borderColor: 'rgba(140, 23, 58, 0.9)',
+            fill: false
+            },
+            {
+            label:'Neopredeljeni',
+            data:[8, 8, 75, 32, 29, 30, 20, 31, 22, 43, 11],
+            borderColor: 'rgba(217, 13, 30, 0.9)',
+            fill: false
+            }
+
+
+        ]},
+        options: {
+        maintainAspectRatio: false,
+    scales: {
+        xAxes: [{
+            gridLines: {
+            color: "rgba(0, 0, 0, 0)"
+            }
+        }],
+
+
+
+
+    }
+    }
+
+    });
+    </script>
+</body>
+</html>
