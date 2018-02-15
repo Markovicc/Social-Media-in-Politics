@@ -1,0 +1,123 @@
+
+
+ #votChart {
+      border: 3px solid skyblue;
+      border-radius: 14px;
+
+  }
+    h1 {
+        font-weight: 900;
+    }
+    h3 {
+        font-weight: 700;
+    }
+    h4 {
+        font-weight: 500;
+    }
+
+  section {
+    padding: 1rem 0 1rem;
+    text-align: center;
+
+  }
+
+  .title h3 {
+      border: 3px solid skyblue;
+      border-radius: 14px;
+      background-color: skyblue;
+      }
+
+  .section-heading,
+  .section-description {
+    margin-bottom: .2rem;
+  }
+
+  .values h3 {
+    border: 3px solid skyblue;
+    border-radius: 14px;
+    background-color: skyblue;
+  }
+  p {
+    border-top: 3px solid skyblue;
+    border-bottom: 3px solid skyblue;
+
+  }
+  p .links1 {
+    border-bottom: 3px solid skyblue;
+
+  }
+  #links2 p {
+  border-top: 3px solid skyblue;
+    }
+
+
+  .values {
+
+    padding-bottom: 5rem;
+    }
+
+   .value {
+    padding: 10px;
+
+
+   }
+
+  .value-multiplier {
+    margin-bottom: .5rem;
+
+
+  }
+  .value-heading {
+    margin-bottom: .3rem;
+  }
+  .value-description {
+    opacity: .8;
+    font-weight: 450;
+
+
+  }
+
+
+
+
+@media (max-width: 550px){
+    #bird img {
+        width:70px;
+        height:70px;
+        }
+
+
+}
+@media (min-width: 550px){
+
+
+      .section {
+        padding: 1rem 0 1rem;
+      }
+      .chart {
+        padding-bottom: 1rem;
+        text-align: center;
+        height: 165px;
+      }
+
+
+      }
+
+    }
+    media (min-width: 750px) {
+
+      .section {
+        padding: 14rem 0 15rem;
+      }
+
+
+
+      .section-description {
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+
+         }
+
+
+    }
