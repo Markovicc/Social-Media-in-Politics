@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="css/vot.css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+
+
+
+    <title>Document</title>
+</head>
+    <body>
+    </section>
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+                <div class="offset-by-five seven columns">
+                    <a href="https://markovicc.github.io/Social-Media-in-Politics/bg_monitor.html"><strong>Početna</strong></a>
+                    <a href="https://markovicc.github.io/Social-Media-in-Politics/bg_voting.html"><strong>Tviter rejting</strong></a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    <section class="title">
+        <div class="container">
+            <div class="row">
+                <div class="twelwe columns" id="bird">
+                    <img src="./images/fb_page2.png" height="110" width="110">
+                    <h1>#bgizbori</h1>
+                    <h3>Rejting izbornih lista i kandidata na Fejsbuku</h3>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    <div class="section chart">
+        <div class="container">
+            <div class="row">
+
+                <div class="twelwe columns">
+
+                    <canvas id="votChart" height="270"></canvas>
+
+
+                </div>
+
+
+
+        </div>
+    </div>
+
+
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+
+                <div class="one-third column value">
+                    <h3 class="value-multiplier">772</h3>
+                    <h4 class="value-heading">statusa</h4>
+                    <p class="value-description"> koji su objavljeni na zvaničnim Fejsbuk stranicama učesnika
+                        na izborima u periodu od 1. do 16. februara 2018. su bili polazni skup za analizu.
+                    </p>
+                </div>
+
+                <div class="one-third column value">
+                    <h3 class="value-multiplier">173.813</h3>
+                    <h4 class="value-heading">lajkova</h4>
+                    <p class="value-description">statusa u tom periodu je početni skup iz koga
+                        je izračunat procentualni udeo svake liste u ukupnom zbiru.
+                        Na osnovu tog rezultata je određen rejting liste.
+                    </p>
+                </div>
+
+                <div class="one-third column value">
+                    <h3 class="value-multiplier">19.672</h3>
+                    <h4 class="value-heading">puta</h4>
+                    <p class="value-description">su šerovani statusi koji su objavljeni na Fejsbuk stranicama tokom navedenog perioda.
+                        Za to vreme korisnici su postavili 11.678 komentara na statuse.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+                <div class="nine columns">
+                    <canvas id="reachChart" height="700" width="700"></canvas>
+
+                </div>
+                <div class="three columns">
+                    <h3 class="value-multiplier">Šerovi</h3>
+                    <h4 class="value-heading">statusa</h4>
+                    <p class="value-description"> prikazani su grafici levo (na mobilnim telefonima - gore)
+                        su zbir šerova statusa koji su objavljivani na zvaničnim Fejsbuk stranicama učesnika
+                        na izborima u periodu od 1. do 16. februara 2018. Ukoliko je reč o koalicijama,
+                        sabrani su lajkovi sa Fejsbuk stranica njenih članova.
+                    </p>
+
+                    <h3 class="value-multiplier">Frekvencija</h3>
+                    <h4 class="value-heading">lajkova</h4>
+                    <p class="value-description">prikazana na donjoj grafici pokazuje broj lajkova na statuse koji su objavljivani na
+                        zvaničnim Fejsbuk stranicama učesnika na izborima u periodu od 1. do 16. februara 2018.
+                        Ukoliko je reč o koalicijama, sabrani su lajkovi sa Fejsbuk stranica njenih članova.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <canvas id="distChart" height="400"></canvas>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+                <div class="three columns">
+                    <h3 class="value-multiplier">Udeo</h3>
+                    <h4 class="value-heading">lajkova</h4>
+                    <p class="value-description"> prikazan na grafici desno (na mobilnim telefonima - dole)
+                        pokazuje priliv lajkova sa zvaničnih Fejsbuk stranica stranaka, udruženja i pojedinaca
+                        koji su deo koalicije i njihov odnos.
+
+
+
+                </div>
+                <div class="three columns">
+                    <canvas id="donutChart1" height="350" width="250"  ></canvas>
+
+                </div>
+                <div class="three columns">
+                    <canvas id="donutChart2" height="350" width="250"></canvas>
+
+                </div>
+                <div class="three columns">
+                    <canvas id="donutChart3" height="350" width="250"></canvas>
+
+                </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+                <div class="offset-by-two eight columns">
+                    <h5>Podelite stranicu na društvenim mrežama</h5>
+                    <div id="share-buttons">
+                        <a href="http://www.facebook.com/sharer.php?u=https://markovicc.github.io/Social-Media-in-Politics/bg_votingf.html" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                        </a>
+                        <a href="https://twitter.com/share?url=https://markovicc.github.io/Social-Media-in-Politics/bg_votingf.html" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                        </a>
+                        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://markovicc.github.io/Social-Media-in-Politics/bg_votingf.html" target="_blank">
+                       <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                       </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="section values">
+        <div class="container">
+            <div class="row">
+                <div class="offset-by-two eight columns">
+                    <p>Za detaljnije i prilagođene analize kontakt: micco.markovic@gmail.com</p>
+
+                    <footer><a href="https://www.linkedin.com/in/miodrag-markovi%C4%87-3a811914b/">&copy; 2018 Miodrag Marković</a></footer>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+    var voteCanvas = document.getElementById('votChart');
+    var voteChart = new Chart(voteCanvas,{
+        type: 'bar',
+        responsive: true,
+
+        data: {
+            labels:['Beli',
+                     'D. Đilas',
+                     'DJB-Dveri',
+                     'DS',
+                     'LDP',
+                     'NdmBgd',
+                     'A. Šapić',
+                     'SNS',
+                     'SPS',
+                     'SRS',
+                     ],
+        datasets: [{
+            label:'Vrednost u procenatima',
+            data:[10.32,
+                 31.61,
+                 14.19,
+                 7.10,
+                 1.89,
+                 9.96,
+                 9.21,
+                 14.70,
+                 0.42,
+                 0.60,
+                 ],
+            backgroundColor:[
+                'rgba(124, 99, 132, 0.9)',
+                'rgba(54, 162, 235, 0.9)',
+                'rgba(255, 206, 86, 0.9)',
+                'rgba(75, 192, 192, 0.9)',
+                'rgba(153, 102, 255, 0.9)',
+                'rgba(115, 159, 64, 0.9)',
+                'rgba(52, 86, 111, 0.9)',
+                'rgba(13, 81, 137, 0.9)',
+                'rgba(290, 68, 115, 0.9)',
+                'rgba(140, 23, 58, 0.9)',
+
+                ]
+
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+    scales: {
+        xAxes: [{
+            barPercentage: 1,
+            categorySpacing: 0,
+            barThickness: 0.9,
+            gridLines: {
+                color: "rgba(0, 0, 0, 0)"
+            }
+        }],
+        yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+
+            }]
+    }
+            }
+
+    });
+    </script>
+    <script type="text/javascript">
+    var reachCanvas = document.getElementById('reachChart');
+    var reachChart = new Chart(reachCanvas,{
+        type: 'polarArea',
+        responsive: true,
+
+        data: {
+            labels:['Beli',
+                     'D. Đilas',
+                     'DJB-Dveri',
+                     'DS',
+                     'LDP',
+                     'NdmBgd',
+                     'A. Šapić',
+                     'SNS',
+                     'SPS',
+                     'SRS',
+
+                     ],
+        datasets: [{
+            label:'Domet tvitova',
+
+            data:[1040,
+                 5694,
+                 5033,
+                 1659,
+                 700,
+                 1630,
+                 676,
+                 2176,
+                 124,
+                 940,
+                 ],
+            backgroundColor:[
+                'rgba(124, 99, 132, 0.9)',
+                'rgba(54, 162, 235, 0.9)',
+                'rgba(255, 206, 86, 0.9)',
+                'rgba(75, 192, 192, 0.9)',
+                'rgba(153, 102, 255, 0.9)',
+                'rgba(115, 159, 64, 0.9)',
+                'rgba(52, 86, 111, 0.9)',
+                'rgba(13, 81, 137, 0.9)',
+                'rgba(290, 68, 115, 0.9)',
+                'rgba(140, 23, 58, 0.9)',
+
+                ]
+
+        }]
+    }
+
+
+    });
+
+    </script>
+    <script type="text/javascript">
+    var distCanvas = document.getElementById('distChart');
+    var distChart = new Chart(distCanvas,{
+        type: 'bar',
+        responsive: true,
+
+        data: {
+            labels:['1. februar',
+                    '2. februar',
+                    '3. februar',
+                    '4. februar',
+                    '5. februar',
+                    '6. februar',
+                    '7. februar',
+                    '8. februar',
+                    '9. februar',
+                    '10. februar',
+                    '11. februar',
+                    '12. februar',
+                    '13. februar',
+                    '14. februar',
+                    '15. februar'],
+        datasets: [{
+            label:'Beli',
+            data:[2282, 927, 2054, 4276, 304, 568, 289, 960, 446, 925, 1939, 1284, 300, 1148, 237],
+            backgroundColor: 'rgba(124, 99, 132, 0.9)',
+
+        },
+        {
+            label:'D. Đilas',
+            data:[3771, 3013, 1927, 1998, 5639, 5653, 3965, 1819, 2736, 5426, 2791, 5433, 2990, 2292, 5491],
+            backgroundColor: 'rgba(54, 162, 235, 0.9)',
+
+            },
+        {
+            label:'DJB-Dveri',
+            data:[5174, 1300, 673, 1244, 1235, 1553, 1998, 1482, 1327, 1646, 1026, 642, 1470, 1850, 2049],
+            backgroundColor: "rgba(255, 206, 86, 0.9)",
+
+            },
+        {
+            label:'DS',
+            data:[576, 685, 1303, 583, 337, 240, 440, 463, 1246, 164, 1906, 589, 554, 1709, 1540],
+            backgroundColor: 'rgba(75, 192, 192, 0.9)',
+
+            },
+        {
+            label:'LDP',
+            data:[312, 34, 264, 517, 166, 318, 235, 400, 211, 197, 96, 132, 117, 72, 212],
+            backgroundColor: 'rgba(153, 102, 255, 0.9)',
+
+            },
+        {
+            label:'NdmBgd',
+            data:[1155, 477, 756, 1176, 1638, 678, 336, 2598, 851, 1319, 1602, 2229, 728, 873, 904],
+            backgroundColor: 'rgba(115, 159, 64, 0.9)',
+
+            },
+        {
+            label:'A. Šapić',
+            data:[637, 487, 1063, 1445, 1101, 989, 282, 810, 1513, 488, 1252, 824, 1167, 1417, 2532],
+            backgroundColor: 'rgba(52, 86, 111, 0.9)',
+
+            },
+        {
+            label:'SNS',
+            data:[253, 542, 697, 488, 189, 4096, 3575, 2120, 1295, 142, 1387, 2705, 2783, 2606, 2669],
+            backgroundColor: 'rgba(13, 81, 137, 0.9)',
+
+            },
+        {
+            label:'SPS',
+            data:[18, 26, 108, 44, 12, 52, 28, 145, 111, 36, 81, 0, 7, 12, 57],
+            backgroundColor: 'rgba(290, 68, 115, 0.9)',
+
+            },
+            {
+            label:'SRS',
+            data:[83, 50, 0, 78, 264, 0, 102, 114, 111, 0, 37, 156, 37],
+            backgroundColor: 'rgba(140, 23, 58, 0.9)',
+
+            },
+
+
+
+        ]},
+        options: {
+        maintainAspectRatio: false,
+    scales: {
+         xAxes: [{
+            stacked: true // this should be set to make the bars stacked
+         }],
+         yAxes: [{
+            stacked: true
+        }],
+
+
+
+
+    }
+    }
+
+    });
+    </script>
+</script>
+<script type="text/javascript">
+var reachCanvas = document.getElementById('reachChart');
+var reachChart = new Chart(reachCanvas,{
+    type: 'polarArea',
+    responsive: true,
+
+    data: {
+        labels:['Beli',
+                 'D. Đilas',
+                 'DJB-Dveri',
+                 'DS',
+                 'LDP',
+                 'NdmBgd',
+                 'A. Šapić',
+                 'SNS',
+                 'SPS',
+                 'SRS',
+
+                 ],
+    datasets: [{
+        label:'Domet tvitova',
+
+        data:[1040,
+             5694,
+             5033,
+             1659,
+             700,
+             1630,
+             676,
+             2176,
+             124,
+             940,
+             ],
+        backgroundColor:[
+            'rgba(124, 99, 132, 0.9)',
+            'rgba(54, 162, 235, 0.9)',
+            'rgba(255, 206, 86, 0.9)',
+            'rgba(75, 192, 192, 0.9)',
+            'rgba(153, 102, 255, 0.9)',
+            'rgba(115, 159, 64, 0.9)',
+            'rgba(52, 86, 111, 0.9)',
+            'rgba(13, 81, 137, 0.9)',
+            'rgba(290, 68, 115, 0.9)',
+            'rgba(140, 23, 58, 0.9)',
+
+            ]
+
+    }]
+}
+
+
+});
+
+</script>
+</script>
+<script type="text/javascript">
+var donut1 = document.getElementById('donutChart1');
+var donutChart1 = new Chart(donut1,{
+    type: 'doughnut',
+    responsive: true,
+
+    data: {
+        labels:['DDJ',
+                 'NS',
+                 'LS',
+                 'PSG',
+
+                 ],
+    datasets: [{
+
+
+        data:[44088,
+             8076,
+             194,
+             2586,
+             ],
+        backgroundColor:['cornflowerblue','darkolivegreen', 'indianred', 'orange'
+            ]
+
+    }]
+}
+
+
+});
+
+</script>
+<script type="text/javascript">
+var donut2 = document.getElementById('donutChart2');
+var donutChart2 = new Chart(donut2,{
+    type: 'doughnut',
+    responsive: true,
+
+    data: {
+        labels:['DS',
+                 'Nova',
+                 'SDS'
+                 ],
+    datasets: [{
+
+        data:[10712,
+             1283,
+             340
+
+             ],
+        backgroundColor:['steelblue','teal', 'tomato'
+            ]
+
+    }]
+}
+
+
+});
+
+</script>
+<script type="text/javascript">
+var donut3 = document.getElementById('donutChart3');
+var donutChart3 = new Chart(donut3,{
+    type: 'doughnut',
+    responsive: true,
+
+    data: {
+        labels:['Dosta je bilo',
+                 'Dveri'
+
+                 ],
+    datasets: [{
+
+
+        data:[13890,
+             10779,
+              ],
+        backgroundColor:['orangered','indianred',
+            ]
+
+    }]
+}
+
+
+});
+
+</script>
+
+</body>
+</html>
